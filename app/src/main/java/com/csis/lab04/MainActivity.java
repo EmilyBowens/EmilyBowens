@@ -1,5 +1,4 @@
 package com.csis.lab04; //package we're in
-//ksjdbfsdf
 
 //android imports
 import android.content.Context;
@@ -37,12 +36,15 @@ public class MainActivity extends AppCompatActivity {
     private PdUiDispatcher dispatcher; //must declare this to use later, used to receive data from sendEvents
 
     @Override
+    TextView myCounter;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);//Mandatory
         setContentView(R.layout.activity_main);//Mandatory
 
 
         Switch onOffSwitch = (Switch) findViewById(R.id.onOffSwitch);//declared the switch here pointing to id onOffSwitch
+
+        TextView myCounter = (TextView) findViewById(R.id.myCounter;
 
         //Check to see if switch1 value changes
         onOffSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -113,6 +115,9 @@ public class MainActivity extends AppCompatActivity {
 
         dispatcher = new PdUiDispatcher(); //create UI dispatcher
         PdBase.setReceiver(dispatcher); //set dispatcher to receive items from puredata patches
+
+        dispatcher.addListener("sendCounter",receiver1);
+        PdBase.subscribe("sendCounter");
 
     }
 
