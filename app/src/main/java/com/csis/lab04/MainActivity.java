@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         Switch onOffSwitch = (Switch) findViewById(R.id.onOffSwitch);//declared the switch here pointing to id onOffSwitch
 
         myCounter = (TextView) findViewById(R.id.counter);
+        myCounter = (TextView) findViewById(R.id.fcounter);
 
         //Check to see if switch1 value changes
         onOffSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -98,6 +99,9 @@ public class MainActivity extends AppCompatActivity {
         dispatcher.addListener("sendCounter", receiver1);
         PdBase.subscribe("sendCounter");
 
+        dispatcher.addListener("sendfCounter",receiver2);
+        PdBase.subscribe("sendfCounter");
+
     }
 
     private PdReceiver receiver1 = new PdReceiver() {
@@ -141,6 +145,45 @@ public class MainActivity extends AppCompatActivity {
     }
         @Override public void receiveSymbol(String source, String symbol) {
             pdPost("symbol: " + symbol); } };
+
+
+
+
+    private PdReceiver receiver2 = new PdReceiver() {
+
+        private void pdPost(final String msg) {
+            Log.e("RECEIVED:", msg);
+            new Handler().post(new Runnable() {
+                @Override
+                public void run() {
+                }
+            });
+        }
+
+        @Override
+        public void print(String s) {
+            Log.i("PRINT",s);
+            Toast.makeText(getBaseContext(),s,Toast.LENGTH_LONG); }
+
+        @Override public void receiveBang(String source) { pdPost("bang"); }
+
+        @Override public void receiveFloat(String source, float x) {
+            pdPost("float: " + x);
+            if(source.equals("sendCounter")) { myCounter.setText(String.valueOf(x));
+            }
+        }
+
+        @Override public void receiveList(String source, Object... args) {
+            pdPost("list: " + Arrays.toString(args));
+        }
+
+        @Override public void receiveMessage(String source, String symbol, Object... args) {
+            pdPost("message: " + Arrays.toString(args));
+
+    } @Override public void receiveSymbol(String source, String symbol) {
+        pdPost("symbol: " + symbol); } };
+
+
 
 
     //<---THIS METHOD LOADS SPECIFIED PATCH NAME----->

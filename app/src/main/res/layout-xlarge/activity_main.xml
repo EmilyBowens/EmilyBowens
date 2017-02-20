@@ -11,24 +11,48 @@
     tools:context="com.csis.lab04.MainActivity">
 
 
+    <Switch
+        android:text="On/Off"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/onOffSwitch"
+        android:layout_marginStart="121dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="138dp" />
+
+    <TextView
+        android:text="Counter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="45dp"
+        android:id="@+id/textView"
+        android:textStyle="normal|bold"
+        android:textSize="24sp"
+        android:textColorLink="@android:color/holo_orange_light"
+        android:textColor="@android:color/holo_green_light"
+        android:layout_above="@+id/counter"
+        android:layout_alignStart="@+id/onOffSwitch" />
+
+    <TextView
+        android:text="FREQUENCY VALUE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="59dp"
+        android:id="@+id/fcounter"
+        android:textColor="@android:color/holo_green_dark"
+        android:layout_below="@+id/onOffSwitch"
+        android:layout_alignStart="@+id/counter" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="COUNTER VALUE"
         android:id="@+id/counter"
-        android:layout_marginEnd="180dp"
-        android:layout_below="@+id/onOffSwitch"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="47dp" />
-
-    <Switch
-        android:text="On/Off"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="168dp"
-        android:id="@+id/onOffSwitch"
-        android:layout_alignParentTop="true"
-        android:layout_toStartOf="@+id/counter"
-        android:layout_marginEnd="92dp" />
+        android:layout_marginEnd="184dp"
+        android:textColor="@android:color/holo_green_dark"
+        android:layout_alignBaseline="@+id/onOffSwitch"
+        android:layout_alignBottom="@+id/onOffSwitch"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>
