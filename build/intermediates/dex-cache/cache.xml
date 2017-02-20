@@ -97,7 +97,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="a994e324fd88c7725b9dd67de37190f2989de6e8">
+        sha1="18d1b9adaa2c5a5f6607a24e9fb4c515f97007ab">
         <dex dex="/Users/student/Desktop/EmilyBowens/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_04a1699f549755287dc218ccc2709ddbc4972f49/classes.dex" />
     </item>
     <item
@@ -124,7 +124,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="9a2312a57e3ee9f3ff7006822cca66e0e3ecebbb">
+        sha1="ad108fff484d1d1891d751cd2b68b5befc8e6cbe">
         <dex dex="/Users/student/Desktop/EmilyBowens/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_e4160810e2952ec8a63905afc01b2c948575b6be/classes.dex" />
     </item>
     <item
