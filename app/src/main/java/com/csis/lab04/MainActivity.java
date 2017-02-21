@@ -44,7 +44,9 @@ public class MainActivity extends AppCompatActivity {
         Switch switch2 = (Switch) findViewById(R.id.switch2);//declared the switch here pointing to id onOffSwitch
 
         myCounter = (TextView) findViewById(R.id.counter);
+        
         myCounter = (TextView) findViewById(R.id.fcounter);
+
         slider1 = (SeekBar) findViewById(R.id.slider1);
 
         slider1.setOnSeekBarChangeListener(
@@ -80,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 float val = (isChecked) ?  1.0f : 0.0f; // value = (get value of isChecked, if true val = 1.0f, if false val = 0.0f)
-                sendFloatPD("onOff", val); //send value to patch, receiveEvent names onOff
+                sendFloatPD("onOff2", val); //send value to patch, receiveEvent names onOff
 
             }
         });
