@@ -52,4 +52,14 @@
         android:layout_alignBottom="@+id/onOffSwitch"
         android:layout_toEndOf="@+id/onOffSwitch" />
 
+    <SeekBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="71dp"
+        android:id="@+id/slider1"
+        android:max="500"
+        android:layout_below="@+id/fcounter"
+        android:layout_alignEnd="@+id/fcounter"
+        android:layout_alignStart="@+id/onOffSwitch" />
+
 </RelativeLayout>

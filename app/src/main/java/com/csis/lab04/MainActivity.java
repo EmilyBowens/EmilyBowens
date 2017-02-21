@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.CompoundButton;
+import android.widget.SeekBar;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,7 +27,10 @@ import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final R = ;
     private PdUiDispatcher dispatcher; //must declare this to use later, used to receive data from sendEvents
+
+    private SeekBar slider1:
 
     TextView myCounter;
 
@@ -40,6 +44,25 @@ public class MainActivity extends AppCompatActivity {
 
         myCounter = (TextView) findViewById(R.id.counter);
         myCounter = (TextView) findViewById(R.id.fcounter);
+        slider1 = (SeekBar) findViewById(R.id.slider1);
+
+        slider1.setOnSeekBarChangeListener(
+                new SeekBar.OnSeekBarChangeListener()
+                {
+                    @Override
+                    public void onProgressChanged(SeekBar seekBar, int progress,
+                                                  boolean fromUser)
+                    {
+                       slide1Value = progress / 100.0f;
+                        sendFloatPD("slider1", slide1Value);
+                    }
+                    @Override
+                    public void onStartTrackingTouch(SeekBar seekBar) {
+                    }
+                    @Override
+                    public void onStopTrackingTouch(SeekBar seekBar) {
+                    }
+                });
 
         //Check to see if switch1 value changes
         onOffSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -169,7 +192,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override public void receiveFloat(String source, float x) {
             pdPost("float: " + x);
-            if(source.equals("sendCounter")) { myCounter.setText(String.valueOf(x));
+            if(source.equals("sendfCounter")) { myCounter.setText(String.valueOf(x));
             }
         }
 
@@ -182,6 +205,7 @@ public class MainActivity extends AppCompatActivity {
 
     } @Override public void receiveSymbol(String source, String symbol) {
         pdPost("symbol: " + symbol); } };
+
 
 
 
