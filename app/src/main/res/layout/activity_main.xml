@@ -52,7 +52,7 @@
         android:layout_alignStart="@+id/onOffSwitch" />
 
     <Switch
-        android:text="Switch"
+        android:text="Song Switch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"

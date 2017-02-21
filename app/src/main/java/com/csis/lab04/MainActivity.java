@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         Switch onOffSwitch = (Switch) findViewById(R.id.onOffSwitch);//declared the switch here pointing to id onOffSwitch
-        Switch switch2 = (Switch) findViewById(R.id.switch2);//declared the switch here pointing to id onOffSwitch
+        Switch switch2 = (Switch) findViewById(R.id.switch2);//declared the switch here pointing to id switch2
 
         myCounter = (TextView) findViewById(R.id.counter);
         
