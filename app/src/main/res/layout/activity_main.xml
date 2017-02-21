@@ -10,17 +10,6 @@
     tools:context="com.csis.lab04.MainActivity">
 
 
-    <Switch
-        android:text="On/Off"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:id="@+id/onOffSwitch"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="22dp"
-        android:textColor="@android:color/holo_blue_bright" />
-
     <TextView
         android:text="Counter"
         android:layout_width="wrap_content"
@@ -61,5 +50,34 @@
         android:layout_below="@+id/fcounter"
         android:layout_alignEnd="@+id/fcounter"
         android:layout_alignStart="@+id/onOffSwitch" />
+
+    <Switch
+        android:text="Switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:id="@+id/switch2"
+        android:layout_below="@+id/slider1"
+        android:layout_toStartOf="@+id/counter" />
+
+    <TextView
+        android:text="Yiruma"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/slider1"
+        android:layout_alignStart="@+id/switch2"
+        android:layout_marginTop="17dp"
+        android:id="@+id/textView2" />
+
+    <Switch
+        android:text="On/Off"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:id="@+id/onOffSwitch"
+        android:layout_marginStart="22dp"
+        android:textColor="@android:color/holo_blue_bright"
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

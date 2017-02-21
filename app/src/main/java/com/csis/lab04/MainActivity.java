@@ -27,10 +27,10 @@ import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final R = ;
     private PdUiDispatcher dispatcher; //must declare this to use later, used to receive data from sendEvents
 
-    private SeekBar slider1:
+    private SeekBar slider1;
+    float slide1Value = 0.0f;
 
     TextView myCounter;
 
@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         Switch onOffSwitch = (Switch) findViewById(R.id.onOffSwitch);//declared the switch here pointing to id onOffSwitch
+        Switch switch2 = (Switch) findViewById(R.id.switch2);//declared the switch here pointing to id onOffSwitch
 
         myCounter = (TextView) findViewById(R.id.counter);
         myCounter = (TextView) findViewById(R.id.fcounter);
@@ -73,6 +74,18 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        //Check to see if switch2 value changes
+        switch2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                float val = (isChecked) ?  1.0f : 0.0f; // value = (get value of isChecked, if true val = 1.0f, if false val = 0.0f)
+                sendFloatPD("onOff", val); //send value to patch, receiveEvent names onOff
+
+            }
+        });
+
+
 
         try { // try the code below, catch errors if things go wrong
             initPD(); //method is below to start PD
